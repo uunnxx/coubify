@@ -4,7 +4,9 @@ Forked from [pcroland/coub_likes_downloader](https://github.com/pcroland/coub_li
 Download Looped Coubs.
 
 Why fork?
-[video here]
+
+[![Difference]](https://drive.google.com/file/d/1fpyTDDduRcWFz7MC6IkEM60UyAHosaGy/view?usp=share_link)
+
 
 # Requirements
 - ffmpeg
