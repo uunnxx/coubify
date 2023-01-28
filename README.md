@@ -5,7 +5,7 @@ Download Looped Coubs.
 
 Why fork?
 
-[![Difference]](https://drive.google.com/file/d/1fpyTDDduRcWFz7MC6IkEM60UyAHosaGy/view?usp=share_link)
+[![Video](https://user-images.githubusercontent.com/6236057/215295438-0bcc8b60-249f-4444-900e-4ea27cf7a64a.png)](https://drive.google.com/file/d/1fpyTDDduRcWFz7MC6IkEM60UyAHosaGy/view?usp=share_link)
 
 
 # Requirements
