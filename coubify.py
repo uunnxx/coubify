@@ -37,7 +37,7 @@ def join_files(files):
             -shortest -y "./output/{file}.mp4"'
 
         subprocess.run(ffmpeg, shell=True, check=True)
-        remove_files(file)
+        # remove_files(file)
 
 
 def remove_files(file):
@@ -54,11 +54,10 @@ def main():
     file_list = list_files()
     join_files(file_list)
 
-    print()
-    print('[color(231)]-[/color(231)]' * 80)
+    white_delimeter = f"[color(231)]{'-' * os.get_terminal_size()[0]}[/color(231)]"
+    print(white_delimeter)
     print(f'[magenta]Count of unique processed coubs: [bold magenta]{len(file_list)}[/bold magenta][/magenta]')
-    print('[color(231)]-[/color(231)]' * 80)
-    print()
+    print(white_delimeter)
 
 
 if __name__ == '__main__':
