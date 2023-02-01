@@ -37,7 +37,7 @@ def join_files(files):
             -shortest -y "./output/{file}.mp4"'
 
         subprocess.run(ffmpeg, shell=True, check=True)
-        # remove_files(file)
+        remove_files(file)
 
 
 def remove_files(file):
