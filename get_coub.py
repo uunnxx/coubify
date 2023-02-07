@@ -76,7 +76,7 @@ def get_pages(session, search):
 
     try:
         pages = a['total_pages']
-        print(f'[bold cyan]{pages}[/bold cyan]')
+        print(f'[bold cyan]Total pages: {pages}[/bold cyan]')
         return pages
     except Exception:
         print(
