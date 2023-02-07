@@ -1,5 +1,6 @@
 import os
 import subprocess
+import shlex
 
 from pathlib import Path
 from rich import print
@@ -29,15 +30,30 @@ def list_files():
 
 def join_files(files):
     for file in files:
-        print('-' * 80)
-        ffmpeg = \
-            f'ffmpeg -stream_loop -1 -i "./temp/{file}.mp4" -c copy -v 0 \
-            -f nut - | ffmpeg -thread_queue_size 100M -i - \
-            -i "./temp/{file}.mp3" -c copy -map 0:v -map 1:a \
-            -shortest -y "./output/{file}.mp4"'
+        file = rename_file(file)
+        ffmpeg = (
+            f'ffmpeg -stream_loop -1 -i "./temp/{file}.mp4" -c copy -v 0 '
+            '-f nut - | ffmpeg -thread_queue_size 100M -i - '
+            f'-i "./temp/{file}.mp3" -c copy -map 0:v -map 1:a '
+            f'-shortest -y "./output/{file}.mp4"'
+        )
 
-        subprocess.run(ffmpeg, shell=True, check=True)
+        subprocess.run(ffmpeg, shell=True)
         remove_files(file)
+
+
+def rename_file(file):
+    sanitized_filename = file\
+            .replace('`', '_')\
+            .replace('$', '_')\
+            .replace("'", '_')\
+            .replace('"', '_')
+
+
+    os.rename(f"./temp/{file}.mp4", f"./temp/{sanitized_filename}.mp4")
+    os.rename(f"./temp/{file}.mp3", f"./temp/{sanitized_filename}.mp3")
+
+    return sanitized_filename
 
 
 def remove_files(file):
