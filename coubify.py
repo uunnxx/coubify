@@ -56,7 +56,10 @@ def main():
 
     white_delimeter = f"[color(231)]{'-' * os.get_terminal_size()[0]}[/color(231)]"
     print(white_delimeter)
-    print(f'[magenta]Count of unique processed coubs: [bold magenta]{len(file_list)}[/bold magenta][/magenta]')
+    print(
+        '[magenta]Count of unique processed coubs: '
+        f'[bold magenta]{len(file_list)}[/bold magenta][/magenta]'
+    )
     print(white_delimeter)
 
 
