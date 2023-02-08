@@ -1,6 +1,5 @@
 import os
 import subprocess
-import shlex
 
 from pathlib import Path
 from rich import print
