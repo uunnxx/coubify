@@ -5,7 +5,7 @@ Download Looped Coubs.
 
 Why fork?
 
-[![Watch the video](https://img.youtube.com/vi/nuRaiyjI5lBc/default.jpg)](https://youtu.be/nuRaiyjI5lBc)
+[![Watch the video](https://img.youtube.com/vi/nuRaiyjI5lBc/0.jpg)](https://www.youtube.com/watch?v=uRaiyjI5lBc)
 
 
 
