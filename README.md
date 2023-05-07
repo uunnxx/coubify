@@ -29,7 +29,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-- Download the `cookies.txt` and put it next to the script using [this expansion](https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid), e.g.
+- Download the `cookies.txt` and put it next to the script using [this extension](https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid), e.g.
 - Run the script.
 
 
