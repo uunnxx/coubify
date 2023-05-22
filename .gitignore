@@ -1,6 +1,8 @@
 cookies.txt
+.venv
 *mp4
 *mkv
-*mp3.mypy_cache
+*mp3
+.mypy_cache
 .venv
 temp/
