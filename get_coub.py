@@ -11,6 +11,7 @@ from rich.progress import track
 
 def main():
     search = arg_parse()
+
     session = requests.Session()
     session.cookies = http.cookiejar.MozillaCookieJar('cookies.txt')
     session.cookies.load()
@@ -20,20 +21,27 @@ def main():
     batch_download(url_list)
 
 
+def help():
+    tab = '    '  # use instead of \t because \t uses 8 spaces
+    program_name = sys.argv[0]
+    print(
+        "[magenta][bold]\nUsage:\n[/bold][/magenta]"
+        "[magenta]"
+        f"[bold]{tab}{program_name} likes | l[/bold]\n"
+        f"[bold]{tab}{program_name} bookmarks | b[/bold]\n"
+        f"[bold]{tab}{program_name} user[/bold] username.\n"
+        "\nOr just give coub link:\n"
+        f"[bold]{tab}{program_name} https://coub.com/view/39qnvs"
+        "[/magenta]"
+    )
+    sys.exit(1)
+
+
 def arg_parse():
+    search = ''
+
     if len(sys.argv) < 2:
-        program_name = sys.argv[0]
-        print(
-            "[red][bold]ERROR![/bold] Usage:\n[/red]"
-            "[magenta]"
-            f"[bold]{program_name} likes[/bold]\n"
-            f"[bold]{program_name} bookmarks[/bold]\n"
-            f"[bold]{program_name} user[/bold] username.\n"
-            f"Or just give coub link: "
-            f"[bold]{program_name} https://coub.com/view/39qnvs"
-            "[/magenta]"
-        )
-        sys.exit(1)
+        help()
     else:
         args = sys.argv[1:]
         match args:
@@ -45,6 +53,8 @@ def arg_parse():
                 search = 'favourites'
             case ['user', user]:
                 search = f"channel/{user}"
+            case _:
+                help()
 
     return search
 
@@ -90,8 +100,6 @@ def get_pages(session, search):
         f'[magenta]api/v2/timeline/[bold]{search}[/bold][/magenta]: ',
         end=''
     )
-
-
 
 
 def prepare_batch(pages, session, search):
